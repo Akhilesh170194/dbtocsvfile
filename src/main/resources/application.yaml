@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: dbtocsvfile
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.106.129:3306/aone
+    username: admin
+    password: Pa$$w0rd
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      poolName: SpringBootJPAHikariCP
+      minimumIdle: 1
+      maximumPoolSize: 2
+      idleTimeout: 30000
+      maxLifetime: 60000
+      connectionTimeout: 2000
+      connection-test-query: SELECT 1
+      data-source-properties:
+        cachePrepStmts: true
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        elideSetAutoCommits: true
+        maintainTimeStats: false
+
+logging:
+  level:
+    root: info
+    com.aone: info
+    org.hibernate.sql: debug
+    # org.hibernate.binder.internal: trace
