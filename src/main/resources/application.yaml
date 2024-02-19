@@ -5,7 +5,7 @@ spring:
   application:
     name: dbtocsvfile
   jpa:
-    database: postgresql
+    database: mysql
     hibernate:
       ddl-auto: update
     properties:
